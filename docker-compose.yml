@@ -13,7 +13,7 @@ services:
   server:
     build: .
     ports:
-      - "81:3000"
+      - "82:3000"
     depends_on:
       - mongodb
 
