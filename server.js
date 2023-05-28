@@ -59,6 +59,11 @@ if (process.env.NODE_ENV === 'production') {
 app.use(notFound)
 app.use(errorHandler)
 
+app.use(express.static('./build'));
+app.get('*',(req,res)=>{
+res.sendFile(path.resolve(__dirname,'./build','index.html'));
+})
+
 const PORT = process.env.PORT || 9000
 
 app.listen(
